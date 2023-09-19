@@ -1,7 +1,7 @@
 {
     "name": "get",
     "scripts": {
-        "get": "node ./get.js >> ./log.html",
-        "wipe": "rm -f ./log.html"
+        "get": "node ./get.js > ./index.html",
+        "serve": "npx serve ."
     }
 }

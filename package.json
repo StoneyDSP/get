@@ -1,0 +1,7 @@
+{
+    "name": "get",
+    "scripts": {
+        "get": "node ./get.js >> ./log.html",
+        "wipe": "rm -f ./log.html"
+    }
+}

@@ -1,7 +1,8 @@
 {
-    "name": "get",
-    "scripts": {
-        "get": "node ./get.js > ./index.html",
-        "serve": "npx serve ."
-    }
+	"name": "get",
+	"scripts": {
+			"get": "node ./get.js > ./index.html",
+			"serve": "npx serve .",
+			"build": "node --version"
+	}
 }

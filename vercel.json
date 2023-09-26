@@ -1,0 +1,203 @@
+{
+	"version": 2,
+	"devCommand": "yarn dev",
+	"installCommand": "yarn install",
+	"buildCommand": "yarn build",
+	"outputDirectory": ".",
+	"public": false,
+	"framework": null,
+	"functions": {
+		"api/vitals/index.js": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/headers/index.js": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/db/index.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		},
+		"api/db/seed.ts": {
+			"memory": 1024,
+			"maxDuration": 10
+		}
+	},
+	"headers": [
+		{
+			"source": "/service-worker.js",
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=0, must-revalidate"
+				}
+			]
+		},
+		{
+			"source": "/(.html)",
+			"headers": [
+				{
+					"key": "X-UA-Compatible",
+					"value": "ie-edge"
+				},
+				{
+					"key": "Vercel-CDN-Cache-Control",
+					"value": "max-age=3600"
+				},
+				{
+					"key": "CDN-Cache-Control",
+					"value": "max-age=60"
+				},
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=10, s-maxage=86400, immutable"
+				},
+				{
+					"key": "X-XSS-Protection",
+					"value": "1; mode=block"
+				}
+			]
+		},
+		{
+			"source": "github-readme-stats.stoneydsp.com/(.*)",
+			"headers": [
+				{
+					"key": "Vercel-CDN-Cache-Control",
+					"value": "max-age=3600"
+				},
+				{
+					"key": "CDN-Cache-Control",
+					"value": "max-age=60"
+				},
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=10, s-maxage=86400, immutable"
+				}
+			]
+		},
+		{
+			"source": "skillicons.dev/",
+			"headers": [
+				{
+					"key": "Vercel-CDN-Cache-Control",
+					"value": "max-age=3600"
+				},
+				{
+					"key": "CDN-Cache-Control",
+					"value": "max-age=60"
+				},
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=10, s-maxage=86400, immutable"
+				}
+			]
+		},
+		{
+			"source": "/(.*)",
+			"headers": [
+				{
+					"key": "X-Content-Type-Options",
+					"value": "nosniff"
+				},
+				{
+					"key": "X-Frame-Options",
+					"value": "DENY"
+				}
+			]
+		},
+		{
+			"source": "/:path*",
+			"has": [
+				{
+					"type": "query",
+					"key": "authorized"
+				}
+			],
+		"headers": [
+				{
+					"key": "x-authorized",
+					"value": "true"
+				}
+			]
+		}
+	],
+	"redirects": [
+    {
+      "source": "/.env",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/.git/",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/wp/",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/.git/config",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/_all_dbs",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/login.action",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/config.json",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/wp-login.php",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/.DS_Store",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/telescope/requests",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/.vscode/sftp.json",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/about",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/server-status",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/v2/_catalog",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/debug/default/view",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/s/3393e21323e26373e26373/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/wp/v2/users",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		},
+		{
+			"source": "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php",
+			"destination": "https://www.antibot.stoneydsp.com/api/headers?query=nope%20nothing%20there"
+		}
+	]
+}
